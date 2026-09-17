@@ -1,0 +1,7 @@
+# Source audio, text dumps and harvest caches — hundreds of MB, all regenerable
+.work/
+
+.DS_Store
+__pycache__/
+*.pyc
+scripts/.cache/

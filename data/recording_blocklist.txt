@@ -1,0 +1,98 @@
+# Terms (case-insensitive) that exclude a recording: female vocalists (kol isha), non-Jewish uses, karaoke, ringtones.
+# Female singers
+ofra haza
+עפרה חזה
+chava alberstein
+חוה אלברשטיין
+shiri maimon
+שירי מימון
+sarit hadad
+שרית חדד
+rita
+ריטה
+eti ankri
+אתי אנקרי
+netta
+נטע ברזילי
+noa 
+אחינועם
+achinoam
+yardena arazi
+ירדנה ארזי
+naomi shemer
+נעמי שמר
+narkis
+נרקיס
+zehava ben
+זהבה בן
+sarah aroeste
+neshama carlebach
+נשמה קרליבך
+basya schechter
+basya
+dalia
+דליה
+miriam toukan
+מרים טוקאן
+yael naim
+יעל נעים
+esther rada
+אסתר רדא
+keren peles
+קרן פלס
+ninet
+נינט
+rotem cohen
+
+batel tzabari
+בתאל צברי
+bat el
+בת אל
+marina maximilian
+מרינה
+mor karbasi
+מור קרבסי
+shlomit levi
+שלומית לוי
+ilana
+אילנה
+ruth dolores
+רות דולורס
+inbar
+ענבר
+mika
+מיקה
+liraz
+לירז
+noa kirel
+נועה קירל
+anna
+אנה
+women's
+women
+נשים
+girls
+בנות
+ladies
+female
+soprano
+her voice
+songstress
+choir of girls
+# Non-Jewish / worship / karaoke / novelty
+hillsong
+worship
+jesus
+christ
+ישוע
+gospel
+church
+messianic
+karaoke
+קריוקי
+ringtone
+1 hour
+10 hours
+שעה של
+lofi
+remix

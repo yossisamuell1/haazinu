@@ -1,0 +1,16 @@
+<!doctype html><meta charset="utf-8"><title>Haazinu diag</title><body style="font:14px monospace;padding:1rem"><h3>Haazinu diagnostics</h3><pre id="o"></pre>
+<script>
+const o=document.getElementById("o"); const seen=[];
+function log(m){ o.textContent+=m+"\n"; seen.push(m); fetch("/diag?"+encodeURIComponent(m)).catch(()=>{}); }
+window.addEventListener("error",e=>log("ERROR "+e.message+" @"+(e.filename||"").split("/").pop()+":"+e.lineno));
+window.addEventListener("unhandledrejection",e=>log("REJECT "+(e.reason&&e.reason.message||e.reason)));
+log("ua "+navigator.userAgent.replace(/Mozilla\/5.0 \(Macintosh; Intel Mac OS X [\d_]+\) AppleWebKit\/[\d.]+ \(KHTML, like Gecko\) /,""));
+log("sw controller "+(navigator.serviceWorker&&navigator.serviceWorker.controller?"YES":"no"));
+(async()=>{
+  try{ const rs=await Promise.race([navigator.serviceWorker.getRegistrations(),new Promise(r=>setTimeout(()=>r("timeout"),2000))]); log("sw registrations "+(rs==="timeout"?"TIMEOUT":rs.length)); }catch(e){log("sw err "+e.message)}
+  const t=Date.now(); try{ const r=await Promise.race([fetch("data/parshiot.json?d="+t),new Promise((_,j)=>setTimeout(()=>j(new Error("timeout 5s")),5000))]); const j=await r.json(); log("fetch parshiot ok "+j.length+" in "+(Date.now()-t)+"ms"); }catch(e){log("fetch parshiot FAIL "+e.message)}
+  try{ const r=await Promise.race([fetch("https://www.sefaria.org/api/v3/texts/Genesis%201?version=hebrew&return_format=text_only"),new Promise((_,j)=>setTimeout(()=>j(new Error("timeout 8s")),8000))]); log("sefaria "+r.status); }catch(e){log("sefaria FAIL "+e.message)}
+  try{ const m=await import("./app.js?diag="+t); log("module import ok"); }catch(e){ log("module import FAIL "+e.message+" | "+(e.stack||"").split("\n")[0].slice(0,200)); }
+  log("done");
+})();
+</script>

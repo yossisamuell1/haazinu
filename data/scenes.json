@@ -1,0 +1,805 @@
+{
+"note": "Biblical scene titles -> the verse depicted. Used to key museum artworks (which carry no verse) to the text. Patterns are case-insensitive regexes matched against an artwork title; English first, then Dutch, German and French variants so the same table works for European collections. Scenes traditionally painted nude are deliberately absent.",
+"scenes": [
+[
+"\\bcreation of light\\b|\\bschepping van het licht\\b|\\berschaffung des lichts\\b",
+"Genesis 1:3"
+],
+[
+"\\bseparation of land and water\\b|\\bcreation of the firmament\\b",
+"Genesis 1:9"
+],
+[
+"creation of the (sun|\\bstars\\b|heavenly bodies)|\\berschaffung der gestirne\\b",
+"Genesis 1:16"
+],
+[
+"\\bcreation of the animals\\b|\\bschepping van de dieren\\b|\\berschaffung der tiere\\b",
+"Genesis 1:25"
+],
+[
+"creation of adam(?! and eve)|\\berschaffung adams\\b|\\bschepping van adam\\b",
+"Genesis 1:27"
+],
+[
+"\\bthe seventh day\\b|god rest(ed|ing)|\\bsabbath of creation\\b",
+"Genesis 2:2"
+],
+[
+"\\bcain and abel\\b|\\bofferings of cain\\b|sacrifice[s]? of cain|\\bopfer von kain\\b|\\boffer van kain\\b",
+"Genesis 4:3"
+],
+[
+"(death|\\bslaying\\b|murder) of abel|\\bcain slay\\b|\\bkain erschlägt\\b|\\bdood van abel\\b",
+"Genesis 4:8"
+],
+[
+"cain (exiled|\\bbanished\\b|fleeing)|\\bvlucht van kain\\b|\\bkains flucht\\b",
+"Genesis 4:16"
+],
+[
+"building (of )?(the )?ark|\\bnoah building\\b|\\bbouw van de ark\\b|\\barche noah bau\\b",
+"Genesis 6:14"
+],
+[
+"animals enter(ing)? the ark|noah'?s ark(?!.*rainbow)|\\bde ark van noach\\b|\\bdie arche noah\\b",
+"Genesis 7:9"
+],
+[
+"\\bthe deluge\\b|\\bthe great flood\\b|noah.*(flood|deluge)|(flood|deluge).*noah|\\bzondvloed\\b|\\bsintflut\\b|\\ble déluge\\b",
+"Genesis 7:17"
+],
+[
+"dove (returns|\\bsent\\b|with the olive)|duif.*(ark|noach)|\\btaube mit ölzweig\\b",
+"Genesis 8:11"
+],
+[
+"noah'?s? (sacrifice|thanksgiving)|\\bdankoffer van noach\\b",
+"Genesis 8:20"
+],
+[
+"rainbow.*(noah|\\bcovenant\\b|ark)|(noah|ark).*rainbow|\\bcovenant with noah\\b|regenboog.*noach",
+"Genesis 9:13"
+],
+[
+"\\btower of babel\\b|\\btoren van babel\\b|\\bturmbau zu babel\\b|\\btour de babel\\b",
+"Genesis 11:4"
+],
+[
+"\\bconfusion of tongues\\b|\\bspraakverwarring\\b|\\bsprachverwirrung\\b",
+"Genesis 11:7"
+],
+[
+"(call|\\bcalling\\b|\\bdeparture\\b|journey) of abraham|abraham.*(canaan|haran)|abrahams? (auszug|reise)",
+"Genesis 12:5"
+],
+[
+"abram and lot (separate|part)|\\bseparation of abraham and lot\\b",
+"Genesis 13:9"
+],
+[
+"\\bmelchizedek\\b|\\bmelchisedek\\b",
+"Genesis 14:18"
+],
+[
+"abraham.*(count the stars|\\bvision\\b|promise)|god'?s promise to abraham",
+"Genesis 15:5"
+],
+[
+"covenant (of|with) abraham|\\bverbond met abraham\\b",
+"Genesis 15:18"
+],
+[
+"(three )?angels (visit|appear).*abraham|abraham (and|receiving) the three angels|\\bgastvrijheid van abraham\\b|\\babraham und die drei engel\\b",
+"Genesis 18:2"
+],
+[
+"abraham (pleads|\\bintercedes\\b|bargains)",
+"Genesis 18:23"
+],
+[
+"\\bdestruction of sodom\\b|sodom.*(burning|destroyed)|\\bverwoesting van sodom\\b|\\buntergang sodoms\\b",
+"Genesis 19:24"
+],
+[
+"(flight|escape) (of|from) lot|lot (flees|\\bfleeing\\b|leaving sodom)|\\bvlucht van lot\\b",
+"Genesis 19:16"
+],
+[
+"hagar (and ishmael )?(in the )?(wilderness|desert)|hagar.*(angel|water)|\\bverstoting van hagar\\b|\\bhagar in der wüste\\b",
+"Genesis 21:17"
+],
+[
+"(sending|\\bdismissal\\b|banishment) of hagar|abraham (dismiss|sends away) hagar",
+"Genesis 21:14"
+],
+[
+"(sacrifice|binding) of isaac|abraham.*sacrific.*isaac|isaac.*sacrifice|\\boffer van isaak\\b|\\bopferung isaaks\\b|\\ble sacrifice d'isaac\\b",
+"Genesis 22:10"
+],
+[
+"\\bangel stays abraham\\b|\\babraham stopped by the angel\\b",
+"Genesis 22:12"
+],
+[
+"(death|burial) of sarah|\\bcave of machpelah\\b|\\bbegrafenis van sara\\b",
+"Genesis 23:19"
+],
+[
+"(eliezer|servant of abraham).*(rebecca|\\brebekah\\b|well)|\\brebecca at the well\\b|\\brebekka am brunnen\\b|\\brebekka en eliëzer\\b",
+"Genesis 24:17"
+],
+[
+"(meeting|marriage) of isaac and rebe|isaac (meets|receives) rebe",
+"Genesis 24:64"
+],
+[
+"esau sell(s|ing) his birthright|\\bmess of pottage\\b|\\bbirthright\\b|\\blinzengericht\\b|\\besau verkoopt\\b",
+"Genesis 25:33"
+],
+[
+"isaac bless(es|ing) jacob|\\bjacob receives the blessing\\b|\\bisaak segnet jakob\\b|\\bizaäk zegent jacob\\b",
+"Genesis 27:27"
+],
+[
+"esau.*(blessing|\\bweeps\\b|returns)|\\bisaac and esau\\b",
+"Genesis 27:38"
+],
+[
+"jacob'?s (dream|ladder)|\\bladder to heaven\\b|jakobs (traum|leiter)|\\bjacobsladder\\b|\\ble songe de jacob\\b",
+"Genesis 28:12"
+],
+[
+"jacob (meets|and) rachel|\\brachel at the well\\b|\\bjacob en rachel\\b|\\bjakob und rahel\\b",
+"Genesis 29:10"
+],
+[
+"jacob'?s (flocks|\\brods\\b|sheep)|laban.*(flock|sheep)",
+"Genesis 30:38"
+],
+[
+"jacob (flees|departs) (from )?laban|laban (pursues|overtakes)",
+"Genesis 31:22"
+],
+[
+"\\bjacob wrestl\\b|\\bwrestling with the angel\\b|jakob (ringt|kämpft)|\\bjacob worstelt\\b|\\bla lutte de jacob\\b",
+"Genesis 32:25"
+],
+[
+"(meeting|reconciliation) of jacob and esau|jacob (meets|and) esau|\\bverzoening van jacob\\b",
+"Genesis 33:4"
+],
+[
+"joseph'?s (dream|\\bcoat\\b|tunic)|\\bcoat of many colours\\b|\\bjozefs droom\\b|\\bjosephs traum\\b",
+"Genesis 37:7"
+],
+[
+"joseph (sold|cast into the pit)|\\bverkoop van jozef\\b|\\bjosephs verkauf\\b|\\bsale of joseph\\b",
+"Genesis 37:28"
+],
+[
+"joseph'?s (bloody )?coat|jacob (shown|mourns).*coat|\\bjacob mourning joseph\\b",
+"Genesis 37:34"
+],
+[
+"joseph interpret(s|ing).*(butler|\\bbaker\\b|prison)",
+"Genesis 40:8"
+],
+[
+"joseph (interpret|before pharaoh)|pharaoh'?s dream|\\bjosef vor pharao\\b|\\bjozef verklaart\\b",
+"Genesis 41:25"
+],
+[
+"joseph.*(governor|\\bruler\\b|\\bglory\\b|exalted)|\\btriumph of joseph\\b|\\bjoseph in egypt\\b",
+"Genesis 41:43"
+],
+[
+"joseph'?s brothers.*(egypt|\\bgrain\\b|corn)|\\bbrothers before joseph\\b",
+"Genesis 42:6"
+],
+[
+"(the )?(silver )?cup.*benjamin|benjamin.*(sack|cup)",
+"Genesis 44:12"
+],
+[
+"joseph (reveals|makes himself known)|\\bjoseph and his brethren\\b|\\bjozef maakt zich bekend\\b",
+"Genesis 45:3"
+],
+[
+"jacob (goes|\\bjourney\\b|arrives).*egypt|\\breunion of jacob and joseph\\b",
+"Genesis 46:29"
+],
+[
+"jacob bless(es|ing).*(ephraim|\\bmanasseh\\b|sons)|\\bsegnung ephraims\\b|\\bjakob zegent\\b",
+"Genesis 48:14"
+],
+[
+"(death|blessing) of jacob|jacob'?s (last|final) (words|blessing)|\\bsterbender jakob\\b",
+"Genesis 49:33"
+],
+[
+"(finding|discovery) of moses|moses (in the bulrushes|\\bfound\\b|rescued)|pharaoh'?s daughter.*moses|\\bmoses aussetzung\\b|\\bvinden van mozes\\b|\\bmoïse sauvé\\b",
+"Exodus 2:5"
+],
+[
+"moses (kills|slays).*egyptian",
+"Exodus 2:12"
+],
+[
+"moses (defends|at the well).*(daughters|jethro)|\\bmoses and the daughters of jethro\\b",
+"Exodus 2:17"
+],
+[
+"\\bburning bush\\b|moses.*(bush|flame)|\\bbrennender dornbusch\\b|\\bbrandende braambos\\b|\\bbuisson ardent\\b",
+"Exodus 3:2"
+],
+[
+"moses (and aaron )?before pharaoh|aaron'?s rod.*serpent|\\bmozes voor farao\\b",
+"Exodus 7:10"
+],
+[
+"plague of (blood|water)|\\bnile turned to blood\\b",
+"Exodus 7:20"
+],
+[
+"\\bplague of frogs\\b|\\bkikkerplaag\\b|\\bfroschplage\\b",
+"Exodus 8:2"
+],
+[
+"plague of (lice|\\bgnats\\b|flies)",
+"Exodus 8:17"
+],
+[
+"\\bmurrain\\b|plague (of|on) the (livestock|cattle)|\\bpest onder het vee\\b",
+"Exodus 9:6"
+],
+[
+"plague of (boils|\\bhail\\b|locusts)|\\bhagelplaag\\b|\\bheuschrecken\\b",
+"Exodus 9:23"
+],
+[
+"\\bplague of darkness\\b|\\bduisternis\\b|\\bfinsternis\\b",
+"Exodus 10:22"
+],
+[
+"\\bdeath of the firstborn\\b|\\bslaying of the firstborn\\b|\\bdood van de eerstgeborenen\\b",
+"Exodus 12:29"
+],
+[
+"israelites.*(unleavened|\\bdepart\\b|leaving egypt)|\\buittocht uit egypte\\b|\\bauszug aus ägypten\\b|\\bexodus of the israelites\\b",
+"Exodus 12:37"
+],
+[
+"pillar of (cloud|fire)|\\bwolkkolom\\b|\\bwolkensäule\\b",
+"Exodus 13:21"
+],
+[
+"crossing (of )?the red sea|parting of the (red )?sea|\\bdoortocht door de rode zee\\b|\\bdurchzug durch das rote meer\\b|\\bpassage de la mer rouge\\b",
+"Exodus 14:22"
+],
+[
+"(pharaoh|egyptians).*(drown|destroyed in the sea)|\\bondergang van farao\\b",
+"Exodus 14:28"
+],
+[
+"song of (moses|miriam)|miriam.*(timbrel|dance)|\\blied van mozes\\b",
+"Exodus 15:20"
+],
+[
+"(bitter )?waters of marah",
+"Exodus 15:25"
+],
+[
+"(gathering|falling) of (the )?manna|manna.*(wilderness|heaven)|\\bmannalezing\\b|\\bmannaregen\\b|\\bla manne\\b",
+"Exodus 16:14"
+],
+[
+"(moses )?strik(es|ing) the rock|\\bwater from the rock\\b|\\bwater uit de rots\\b|\\bwasser aus dem felsen\\b|\\bmoïse fait jaillir\\b",
+"Exodus 17:6"
+],
+[
+"battle (against|with) amalek|moses.*(arms|hands) (held|raised)|\\bamalek\\b",
+"Exodus 17:11"
+],
+[
+"jethro (visits|advises)",
+"Exodus 18:17"
+],
+[
+"(giving|receiving) of the law|moses.*(sinai|\\btablets\\b|tables)|\\bten commandments\\b|\\bgesetzgebung\\b|\\bwetgeving op de sinaï\\b|\\bles tables de la loi\\b",
+"Exodus 19:20"
+],
+[
+"(the )?(golden calf|dance around the calf)|\\bgouden kalf\\b|\\bgoldenes kalb\\b|\\ble veau d'or\\b",
+"Exodus 32:19"
+],
+[
+"moses break(s|ing) the (tablets|tables)",
+"Exodus 32:19"
+],
+[
+"moses (descend|\\bcomes down\\b|radiant)|\\bshining face of moses\\b|\\bmozes daalt af\\b",
+"Exodus 34:29"
+],
+[
+"(building|erection) (of )?the tabernacle|\\bbezalel\\b|\\btabernakel\\b|\\bstiftshütte\\b",
+"Exodus 40:17"
+],
+[
+"\\bconsecration of aaron\\b|aaron.*(priest|vestments)|\\bwijding van aäron\\b",
+"Leviticus 8:12"
+],
+[
+"(death|sin) of nadab and abihu|\\bnadab\\b",
+"Leviticus 10:2"
+],
+[
+"\\bscapegoat\\b|\\bazazel\\b|\\bzondebok\\b|\\bsündenbock\\b",
+"Leviticus 16:21"
+],
+[
+"\\bpriestly blessing\\b|\\bbirkat kohanim\\b|\\baaronic blessing\\b|\\bpriesterzegen\\b",
+"Numbers 6:24"
+],
+[
+"\\bmenorah\\b|\\bthe lampstand\\b|\\bzevenarmige kandelaar\\b",
+"Numbers 8:2"
+],
+[
+"quails.*(wilderness|\\bisrael\\b|\\bcamp\\b|manna)|\\bplague of quails\\b|\\bkwartels\\b",
+"Numbers 11:31"
+],
+[
+"(twelve )?spies.*(canaan|\\beshcol\\b|\\bgrapes\\b|promised land)|\\bgrapes of eshcol\\b|\\breturn of the spies\\b|\\bverspieders\\b|\\bkundschafter\\b",
+"Numbers 13:23"
+],
+[
+"\\bkorah\\b|\\bdathan and abiram\\b|\\brebellion of korah\\b|\\bopstand van korach\\b|\\brotte korah\\b",
+"Numbers 16:32"
+],
+[
+"aaron'?s rod (that )?(budded|blossom)|\\bbloeiende staf\\b",
+"Numbers 17:23"
+],
+[
+"(brazen|\\bbronze\\b|brass) serpent|\\bserpent of brass\\b|\\bkoperen slang\\b|\\beherne schlange\\b|\\bserpent d'airain\\b",
+"Numbers 21:9"
+],
+[
+"\\bbalaam\\b|balaam'?s (ass|donkey)|\\bbileam\\b|\\bezelin van bileam\\b|\\bl'ânesse de balaam\\b",
+"Numbers 22:28"
+],
+[
+"\\bbalaam blesses\\b|\\bhow goodly are thy tents\\b",
+"Numbers 24:5"
+],
+[
+"\\bphinehas\\b|\\bpinchas\\b",
+"Numbers 25:7"
+],
+[
+"(death|view) of moses|moses (sees|views) the promised land|\\bnebo\\b|\\bdood van mozes\\b|\\btod des mose\\b",
+"Deuteronomy 34:1"
+],
+[
+"crossing (of )?the jordan|ark.*jordan|\\bdoortocht door de jordaan\\b",
+"Joshua 3:17"
+],
+[
+"(fall|walls) of jericho|\\bjericho\\b|priests.*trumpets.*jericho|\\bval van jericho\\b|\\bfall jerichos\\b",
+"Joshua 6:20"
+],
+[
+"\\brahab\\b|spies.*(rahab|window)",
+"Joshua 2:15"
+],
+[
+"\\bachan\\b|\\bstoning of achan\\b",
+"Joshua 7:25"
+],
+[
+"joshua.*(sun|moon).*stand|sun stand(s|ing) still|\\bjosua gebietet der sonne\\b",
+"Joshua 10:12"
+],
+[
+"\\bgibeonites\\b|\\bgibeon\\b",
+"Joshua 9:15"
+],
+[
+"(death|farewell) of joshua|joshua.*(shechem|covenant)",
+"Joshua 24:25"
+],
+[
+"deborah.*(barak|\\bjudge\\b|\\bsong\\b|palm)|barak.*(sisera|deborah)|debora.*(barak|richter)",
+"Judges 4:14"
+],
+[
+"\\bjael\\b|\\bsisera\\b|\\bjaël\\b",
+"Judges 4:21"
+],
+[
+"\\bsong of deborah\\b|\\blied van debora\\b",
+"Judges 5:1"
+],
+[
+"gideon.*(fleece|dew)|\\bvlies van gideon\\b",
+"Judges 6:38"
+],
+[
+"gideon.*(three hundred|300|\\blapping\\b|water)|\\bproef van gideon\\b",
+"Judges 7:6"
+],
+[
+"gideon.*(trumpets|\\bpitchers\\b|midianites)|\\brout of the midianites\\b",
+"Judges 7:20"
+],
+[
+"\\babimelech\\b|millstone.*abimelech",
+"Judges 9:53"
+],
+[
+"\\bjephthah\\b|\\bjefta\\b",
+"Judges 11:34"
+],
+[
+"(birth|annunciation) of samson|\\bmanoah\\b",
+"Judges 13:20"
+],
+[
+"samson.*(lion|honey)|simson.*löwe",
+"Judges 14:6"
+],
+[
+"samson.*(foxes|firebrands)",
+"Judges 15:4"
+],
+[
+"samson.*(jawbone|philistines slain)|\\bkinnebak\\b",
+"Judges 15:15"
+],
+[
+"samson.*(gates|gaza)",
+"Judges 16:3"
+],
+[
+"(death|blindness) of samson|samson.*(pillars|\\btemple\\b|\\bmill\\b|blind)|\\bsimson im tempel\\b",
+"Judges 16:30"
+],
+[
+"ruth and (boaz|naomi)|ruth.*(gleaning|\\bfield\\b|harvest)|\\bruth en boaz\\b|\\bruth und boas\\b|\\bles glaneuses de ruth\\b",
+"Ruth 2:8"
+],
+[
+"\\bnaomi\\b|\\borpah\\b|\\bdeparture of ruth\\b|\\bwhither thou goest\\b",
+"Ruth 1:16"
+],
+[
+"hannah.*(samuel|\\beli\\b|\\bprayer\\b|vow)|samuel.*(dedicat|presented)",
+"I Samuel 1:28"
+],
+[
+"(calling|call) of samuel|samuel.*(eli|\\bvoice\\b|night)|\\bsamuel en eli\\b|\\bberufung samuels\\b",
+"I Samuel 3:4"
+],
+[
+"ark.*(philistines|\\bdagon\\b|captured)|\\bdagon\\b",
+"I Samuel 5:4"
+],
+[
+"\\breturn of the ark\\b|ark.*beth-?shemesh|ark.*(cart|kine)",
+"I Samuel 6:13"
+],
+[
+"samuel anoint(s|ing) saul|\\bsaul anointed\\b|\\bzalving van saul\\b",
+"I Samuel 10:1"
+],
+[
+"samuel.*agag|\\bdeath of agag\\b",
+"I Samuel 15:33"
+],
+[
+"samuel anoint(s|ing) david|\\bdavid anointed\\b|\\bzalving van david\\b",
+"I Samuel 16:13"
+],
+[
+"david (play|harp).*saul|saul.*(harp|music)|\\bdavid speelt harp\\b",
+"I Samuel 16:23"
+],
+[
+"david (and|\\bslays\\b|kills) goliath|\\bgoliath\\b|\\bdavid en goliath\\b|\\bdavid und goliath\\b",
+"I Samuel 17:49"
+],
+[
+"\\bdavid and jonathan\\b|jonathan.*david",
+"I Samuel 20:41"
+],
+[
+"david.*(ahimelech|\\bshewbread\\b|nob)",
+"I Samuel 21:7"
+],
+[
+"\\bdavid spares saul\\b|saul.*(cave|\\bskirt\\b|robe cut)|\\bdavid verschoont saul\\b",
+"I Samuel 24:5"
+],
+[
+"abigail.*(david|nabal)|\\bnabal\\b",
+"I Samuel 25:23"
+],
+[
+"\\bwitch of endor\\b|saul.*(witch|medium)|\\bhexe von endor\\b|\\bheks van endor\\b",
+"I Samuel 28:14"
+],
+[
+"\\bdeath of saul\\b|saul.*(sword|falls)|\\bdood van saul\\b",
+"I Samuel 31:4"
+],
+[
+"david.*(lament|mourns).*(saul|jonathan)",
+"II Samuel 1:17"
+],
+[
+"david.*(crowned|king over israel)",
+"II Samuel 5:3"
+],
+[
+"(david|ark).*(brought|\\bdancing\\b|jerusalem)|david dance?s? before the ark|\\bdavid danst\\b",
+"II Samuel 6:14"
+],
+[
+"nathan.*david|parable of the (poor man|ewe lamb)",
+"II Samuel 12:7"
+],
+[
+"absalom.*(oak|\\bhair\\b|\\btree\\b|slain)|\\bdeath of absalom\\b|\\bdood van absalom\\b",
+"II Samuel 18:14"
+],
+[
+"david (mourns|weeps).*absalom",
+"II Samuel 18:33"
+],
+[
+"david.*(census|\\bplague\\b|araunah)|\\bthreshing floor\\b",
+"II Samuel 24:18"
+],
+[
+"(anointing|coronation) of solomon|\\bsolomon anointed\\b",
+"I Kings 1:39"
+],
+[
+"(judgement|judgment) of solomon|solomon.*(two mothers|\\bchild\\b|sword)|\\bsalomons urteil\\b|\\boordeel van salomo\\b|\\bjugement de salomon\\b",
+"I Kings 3:25"
+],
+[
+"solomon.*(dream|\\bwisdom\\b|gibeon)",
+"I Kings 3:5"
+],
+[
+"\\bbuilding of the temple\\b|solomon.*temple|cedars.*temple|\\btempelbau\\b",
+"I Kings 6:14"
+],
+[
+"\\bdedication of the temple\\b|solomon.*(prayer|ark into the temple)",
+"I Kings 8:22"
+],
+[
+"\\bqueen of sheba\\b|sheba.*solomon|\\bkoningin van sheba\\b|\\bkönigin von saba\\b|\\bla reine de saba\\b",
+"I Kings 10:1"
+],
+[
+"\\bjeroboam\\b|\\bdivision of the kingdom\\b|ahijah.*(prophet|jeroboam)",
+"I Kings 11:31"
+],
+[
+"elijah.*(ravens|\\bbrook\\b|cherith)|\\braben ernähren elia\\b|\\belia en de raven\\b",
+"I Kings 17:6"
+],
+[
+"(widow|zarephath).*(elijah|\\boil\\b|meal)|elijah.*widow",
+"I Kings 17:16"
+],
+[
+"elijah rais(es|ing).*(son|child)|\\bweduwe zoon\\b",
+"I Kings 17:22"
+],
+[
+"elijah.*(carmel|\\bprophets of baal\\b|fire from heaven)|\\bcontest on carmel\\b|\\belia auf dem karmel\\b",
+"I Kings 18:38"
+],
+[
+"elijah.*(juniper|\\bangel\\b|\\bfood\\b|horeb)|\\belia door engel\\b",
+"I Kings 19:5"
+],
+[
+"(still small voice|elijah.*cave)",
+"I Kings 19:12"
+],
+[
+"(calling|call) of elisha|elijah.*(mantle|elisha.*plough)",
+"I Kings 19:19"
+],
+[
+"\\bnaboth\\b|\\bvineyard of naboth\\b",
+"I Kings 21:16"
+],
+[
+"(death|end) of ahab|ahab.*(chariot|arrow)",
+"I Kings 22:34"
+],
+[
+"elijah.*(chariot|\\bwhirlwind\\b|ascen)|\\bassumption of elijah\\b|\\bhemelvaart van elia\\b|\\belias himmelfahrt\\b",
+"II Kings 2:11"
+],
+[
+"elisha.*(bears|\\bchildren\\b|mock)|\\bberen\\b",
+"II Kings 2:24"
+],
+[
+"elisha.*(widow|\\boil\\b|vessels)",
+"II Kings 4:6"
+],
+[
+"elisha.*(shunammite|raises the child)",
+"II Kings 4:35"
+],
+[
+"\\bnaaman\\b|\\bleprosy of naaman\\b|jordan.*naaman",
+"II Kings 5:14"
+],
+[
+"elisha.*(axe|iron swim)",
+"II Kings 6:6"
+],
+[
+"elisha.*(chariots of fire|\\bblinded\\b|dothan)",
+"II Kings 6:17"
+],
+[
+"\\bjehu\\b|\\bdeath of jezebel\\b|jezebel.*(window|thrown)|\\bdood van izebel\\b",
+"II Kings 9:33"
+],
+[
+"\\bathaliah\\b|joash.*(crowned|hidden)",
+"II Kings 11:12"
+],
+[
+"\\bhezekiah\\b|\\bsennacherib\\b|assyrian.*(destroyed|angel)|\\bbelagerung jerusalems\\b",
+"II Kings 19:35"
+],
+[
+"josiah.*(king|\\blaw\\b|\\btemple\\b|reform)|\\bbook of the law found\\b|\\bhuldah\\b",
+"II Kings 22:10"
+],
+[
+"(destruction|fall) of jerusalem|nebuchadnezzar.*jerusalem|\\bzedekiah\\b|\\bverwoesting van jeruzalem\\b",
+"II Kings 25:9"
+],
+[
+"david.*(psalm|\\bharp\\b|writing)|king david (playing|with).*harp|\\bdavid mit der harfe\\b|\\bkoning david harp\\b",
+"Psalms 57:9"
+],
+[
+"by the (rivers|waters) of babylon|\\ban den wassern babylons\\b|\\baan de rivieren van babel\\b",
+"Psalms 137:1"
+],
+[
+"job.*(messengers|\\bmisfortune\\b|news)|hiob.*botschaft",
+"Job 1:14"
+],
+[
+"job.*(friends|\\bcomforters\\b|\\bash\\b|potsherd)|\\bhiob und seine freunde\\b|\\bjob en zijn vrienden\\b",
+"Job 2:11"
+],
+[
+"job.*(whirlwind|\\banswered\\b|restored)|\\bleviathan\\b|\\bbehemoth\\b",
+"Job 38:1"
+],
+[
+"esther before (the king|ahasuerus)|esther.*(faint|\\bsceptre\\b|swoon)|\\besther voor ahasveros\\b|\\besther vor ahasverus\\b",
+"Esther 5:2"
+],
+[
+"(triumph|honour) of mordecai|mordecai.*(horse|led)|\\bmordechai\\b",
+"Esther 6:11"
+],
+[
+"esther.*(banquet|\\bfeast\\b|accuses)|haman.*(esther|pleads)|\\bhaman\\b",
+"Esther 7:6"
+],
+[
+"\\bvashti\\b",
+"Esther 1:12"
+],
+[
+"daniel.*(lions|den)|\\bdaniël in de leeuwenkuil\\b|\\bdaniel in der löwengrube\\b|\\bdaniel dans la fosse\\b",
+"Daniel 6:17"
+],
+[
+"(three|\\bshadrach\\b|\\bmeshach\\b|abednego).*(furnace|fiery)|\\bfiery furnace\\b|\\bvurige oven\\b|\\bfeuerofen\\b",
+"Daniel 3:25"
+],
+[
+"\\bbelshazzar\\b|\\bwriting on the wall\\b|\\bmene mene\\b|\\bgastmaal van belsazar\\b|\\bbelsazars fest\\b",
+"Daniel 5:25"
+],
+[
+"nebuchadnezzar.*(dream|\\bimage\\b|statue)|\\bcolossus of nebuchadnezzar\\b",
+"Daniel 2:31"
+],
+[
+"daniel.*(vision|\\bbeasts\\b|ancient of days)",
+"Daniel 7:9"
+],
+[
+"jonah.*(whale|\\bfish\\b|\\bcast\\b|\\bsea\\b|spewed)|jona.*(walvis|wal)|jonas.*(baleine|poisson)",
+"Jonah 2:11"
+],
+[
+"jonah.*(nineveh|preach)|\\bjona predikt\\b",
+"Jonah 3:4"
+],
+[
+"jonah.*(gourd|\\bplant\\b|\\bbooth\\b|sulks)|\\bwonderboom\\b",
+"Jonah 4:6"
+],
+[
+"isaiah.*(vision|\\bseraph\\b|\\bcoal\\b|lips)|\\bberufung jesajas\\b|\\broeping van jesaja\\b",
+"Isaiah 6:6"
+],
+[
+"\\bpeaceable kingdom\\b|wolf.*lamb.*dwell|\\bvrederijk\\b|\\bfriedensreich\\b",
+"Isaiah 11:6"
+],
+[
+"swords into (plough|plow)shares|\\bzwaarden tot ploegscharen\\b",
+"Isaiah 2:4"
+],
+[
+"jeremiah.*(lament|\\bruins\\b|\\bjerusalem\\b|weeping)|\\bklagender jeremia\\b|\\bjeremia treurt\\b",
+"Lamentations 1:1"
+],
+[
+"jeremiah.*(call|\\bpotter\\b|\\bscroll\\b|baruch)",
+"Jeremiah 36:4"
+],
+[
+"ezekiel.*(vision|\\bwheels\\b|\\bchariot\\b|merkavah)|\\bvisioen van ezechiël\\b|\\bvision des hesekiel\\b",
+"Ezekiel 1:16"
+],
+[
+"valley of (the )?dry bones|\\bdry bones\\b|\\bdal der dorre beenderen\\b|\\btotengebeine\\b",
+"Ezekiel 37:4"
+],
+[
+"elijah.*(baal|altar)",
+"I Kings 18:38"
+],
+[
+"\\bhosea\\b.*(prophet|\\bgomer\\b|vision)|\\bprophet hosea\\b",
+"Hosea 3:1"
+],
+[
+"\\bherdsman of tekoa\\b|\\bprophet amos\\b|\\bamos\\b.*(prophet|vision)",
+"Amos 7:14"
+],
+[
+"\\bbeat their swords\\b|\\bprophet micah\\b",
+"Micah 4:3"
+],
+[
+"zechariah.*(vision|\\bcandlestick\\b|\\bhorses\\b|chariots)",
+"Zechariah 6:1"
+],
+[
+"ezra.*(read|\\blaw\\b|people)|\\besdras\\b",
+"Nehemiah 8:3"
+],
+[
+"nehemiah.*(walls|\\bruins\\b|rebuild)",
+"Nehemiah 2:13"
+],
+[
+"\\brebuilding of the temple\\b|\\bzerubbabel\\b|cyrus.*(vessels|decree)",
+"Ezra 3:10"
+]
+]
+}
