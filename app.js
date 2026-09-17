@@ -343,7 +343,7 @@ function renderToc() {
     const det = el("details", { "data-book": b.en }, el("summary", {}, b.en, el("span", { class: "he-inline" }, b.he)));
     for (const p of data.parshiot.filter((p) => p.book === b.en)) {
       const [c, v] = p.begin.split(":").map(Number);
-      det.append(el("a", { href: `#${b.en}.${c}.${v}`, "data-parsha": p.id, class: state.week && normQ(state.week) === normQ(p.id) ? "week" : "" }, p.id, el("span", { class: "he-inline" }, stripMarks(p.he))));
+      det.append(el("a", { href: `#${b.en}.${c}.${v}`, "data-parsha": p.id }, p.id, el("span", { class: "he-inline" }, stripMarks(p.he))));
     }
     wrap.append(det);
   }
@@ -660,7 +660,7 @@ function renderSongMap() {
       const count = [...m.values()].reduce((a, x) => a + x.size, 0); total += count;
       const cells = el("div", { class: "sm-cells" });
       for (let c = 1; c <= b.ch; c++) { const k = m.get(c)?.size || 0; cells.append(el("a", { href: `#${b.en}.${c}.1`, class: heat(k), title: `${b.en} ${c}` + (k ? ` · ${k} ${artMode ? "work" : "song"}${k > 1 ? "s" : ""}: ${names(m.get(c))}` : ""), onclick: () => setTab(artMode ? "art" : "songs") })); }
-      grid.append(el("div", { class: "sm-row" }, el("div", { class: "sm-name" }, el("span", {}, b.en, " ", el("b", {}, count ? String(count) : "")), el("span", { class: "he-inline" }, b.he)), cells));
+      grid.append(el("div", { class: "sm-row" }, el("div", { class: "sm-name" }, el("span", {}, b.en), el("span", { class: "he-inline" }, b.he)), cells));
     }
   }
   const n = nusach();
@@ -673,7 +673,7 @@ function renderSongMap() {
     for (const i of idxs) { const k = siddur.get(i)?.size || 0; count += k; const l = n.leaves[i]; cells.append(el("a", { href: `#s/${n.id}/${encodeURIComponent(l.ref)}/1`, class: `wide ${heat(k)}`, title: l.title + (k ? ` · ${k}: ${names(siddur.get(i))}` : ""), onclick: () => setTab("songs") }, l.title.length > 22 ? l.title.slice(0, 20) + "…" : l.title)); }
     total += count;
     const [top, sub] = key.split(" / ");
-    grid.append(el("div", { class: "sm-row" }, el("div", { class: "sm-name" }, el("span", {}, sub || top, " ", el("b", {}, count ? String(count) : "")), el("span", { class: "he-inline" }, (n.leaves[idxs[0]].hePath[1] || n.leaves[idxs[0]].hePath[0] || ""))), cells));
+    grid.append(el("div", { class: "sm-row" }, el("div", { class: "sm-name" }, el("span", {}, sub || top), el("span", { class: "he-inline" }, (n.leaves[idxs[0]].hePath[1] || n.leaves[idxs[0]].hePath[0] || ""))), cells));
   }
   $("#songmapCount").textContent = `${allSongs().length} songs · ${total} placements`;
 }
@@ -696,7 +696,6 @@ async function loadWeek() {
   const p = data.parshiot.find((p) => normQ(p.id) === normQ(state.week)) || data.parshiot.find((p) => normQ(p.id).startsWith(normQ(state.week).slice(0, 5)));
   if (!p) return;
   const [c, v] = p.begin.split(":").map(Number); const href = `#${p.book}.${c}.${v}`;
-  const chip = $("#weekChip"); chip.hidden = false; chip.href = href; chip.innerHTML = `This Shabbat · <b>${week.title}</b> <span class="he-inline">${week.he || stripMarks(p.he)}</span>`;
   $("#welcomeWeek").href = href; $("#welcomeWeek").textContent = `This week: ${week.title}`;
   document.querySelectorAll("#tocList a[data-parsha]").forEach((a) => a.classList.toggle("week", a.dataset.parsha === p.id));
 }
