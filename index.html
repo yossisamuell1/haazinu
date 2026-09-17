@@ -14,7 +14,7 @@
 <meta name="apple-mobile-web-app-title" content="Haazinu">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;500&family=Frank+Ruhl+Libre:wght@400;500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=202609161211">
+<link rel="stylesheet" href="styles.css?v=202609172010">
 </head>
 <body>
 <header class="bar">
@@ -109,54 +109,12 @@
 
   <aside class="panel" aria-label="Verse tools">
     <div class="tabs" role="tablist">
-      <button class="tab active" role="tab" data-tab="kriah" aria-selected="true">Kriah <span class="he-inline">קריאה</span></button>
-      <button class="tab" role="tab" data-tab="songs" aria-selected="false">Songs <span class="he-inline">ניגונים</span></button>
+      <button class="tab active" role="tab" data-tab="songs" aria-selected="true">Songs <span class="he-inline">ניגונים</span></button>
       <button class="tab" role="tab" data-tab="art" aria-selected="false">Art <span class="he-inline">אמנות</span></button>
+      <button class="tab" role="tab" data-tab="kriah" aria-selected="false">Kriah <span class="he-inline">קריאה</span></button>
     </div>
 
-    <div id="tab-kriah" class="tabpane" role="tabpanel">
-      <div class="sel-ref">
-        <div id="tropRefHe" class="he sel-ref-he"></div>
-        <div id="tropRefEn" class="sel-ref-en"><span id="tropRefText"></span> <a id="sefariaLink" href="#" target="_blank" rel="noopener" class="fine">Sefaria ↗</a></div>
-      </div>
-      <div id="tropSiddurNote" class="notice" hidden></div>
-      <div id="tropTorah">
-      <div class="player">
-        <div class="player-row">
-          <button id="playVerse" class="btn primary">▶ Chant verse</button>
-          <button id="playFromHere" class="btn">▶▶ From here</button>
-          <button id="stopBtn" class="btn quiet" title="Stop">■</button>
-        </div>
-        <div class="player-row small">
-          <label>Speed
-            <select id="rate"><option value="0.6">0.6×</option><option value="0.75">0.75×</option><option value="0.9">0.9×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option></select>
-          </label>
-          <label class="toggle"><input type="checkbox" id="loopVerse"> Loop</label>
-          <span id="playerState" class="player-state">Ready</span>
-        </div>
-        <div class="progress"><div id="progressBar" class="progress-bar"></div></div>
-        <div class="player-row small record-row">
-          <button id="recBtn" class="btn quiet" title="Record yourself reading this verse">● Record me</button>
-          <button id="recPlay" class="btn quiet" hidden>▶ My take</button>
-          <span id="recState" class="fine"></span>
-        </div>
-      </div>
-      <div id="tropNoAudio" class="notice" hidden></div>
-      <h3 class="panel-h">Words and their trop <small>tap a word to hear it</small></h3>
-      <ol id="wordList" class="wordlist"></ol>
-      <h3 class="panel-h">Legend</h3>
-      <div class="legend">
-        <span class="lg dis">disjunctive · מפסיק</span>
-        <span class="lg con">conjunctive · מחבר</span>
-      </div>
-      <div class="attribution" id="attribution">
-        <strong>Reader</strong> Rabbi Michoel Slavin, ba'al korei of 770 Eastern Parkway, Chabad trop. Recordings published by Chabad.org for learning; streamed from their distributor, not re-hosted.
-        <a href="https://www.chabad.org/multimedia/music_cdo/aid/982057/jewish/Torah-Reading-Recordings.htm" target="_blank" rel="noopener">Chabad.org</a> · <a href="https://www.sefaria.org/" target="_blank" rel="noopener">Text via Sefaria</a>
-      </div>
-      </div>
-    </div>
-
-    <div id="tab-songs" class="tabpane" role="tabpanel" hidden>
+    <div id="tab-songs" class="tabpane" role="tabpanel">
       <div class="sel-ref">
         <div id="songRefHe" class="he sel-ref-he"></div>
         <div id="songRefEn" class="sel-ref-en"></div>
@@ -186,6 +144,43 @@
       <div id="chapterArt" class="chapter-songs"></div>
       <p class="fine" style="margin-top:1rem">Public-domain works, images served by Wikimedia Commons. Tissot's Old Testament (Jewish Museum, New York) and Doré's Bible plates; immodest scenes are left out.</p>
     </div>
+    <div id="tab-kriah" class="tabpane" role="tabpanel" hidden>
+      <div class="sel-ref">
+        <div id="tropRefHe" class="he sel-ref-he"></div>
+        <div id="tropRefEn" class="sel-ref-en"><span id="tropRefText"></span> <a id="sefariaLink" href="#" target="_blank" rel="noopener" class="fine">Sefaria ↗</a></div>
+      </div>
+      <div id="tropSiddurNote" class="notice" hidden></div>
+      <div id="tropTorah">
+      <div class="player">
+        <div class="player-row">
+          <button id="playVerse" class="btn primary">▶ Chant verse</button>
+          <button id="playFromHere" class="btn">▶▶ From here</button>
+          <button id="stopBtn" class="btn quiet" title="Stop">■</button>
+        </div>
+        <div class="player-row small">
+          <label>Speed
+            <select id="rate"><option value="0.6">0.6×</option><option value="0.75">0.75×</option><option value="0.9">0.9×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option></select>
+          </label>
+          <label class="toggle"><input type="checkbox" id="loopVerse"> Loop</label>
+          <span id="playerState" class="player-state">Ready</span>
+        </div>
+        <div class="progress"><div id="progressBar" class="progress-bar"></div></div>
+        <div class="player-row small record-row">
+          <button id="recBtn" class="btn quiet" title="Record yourself reading this verse">● Record me</button>
+          <button id="recPlay" class="btn quiet" hidden>▶ My take</button>
+          <span id="recState" class="fine"></span>
+        </div>
+      </div>
+      <div id="tropNoAudio" class="notice" hidden></div>
+      <h3 class="panel-h">Words and their trop <small>tap a word to hear it</small></h3>
+      <ol id="wordList" class="wordlist"></ol>
+      <div class="attribution" id="attribution">
+        <strong>Reader</strong> Rabbi Michoel Slavin, ba'al korei of 770 Eastern Parkway, Chabad trop. Recordings published by Chabad.org for learning; streamed from their distributor, not re-hosted.
+        <a href="https://www.chabad.org/multimedia/music_cdo/aid/982057/jewish/Torah-Reading-Recordings.htm" target="_blank" rel="noopener">Chabad.org</a> · <a href="https://www.sefaria.org/" target="_blank" rel="noopener">Text via Sefaria</a>
+      </div>
+      </div>
+    </div>
+
   </aside>
 </main>
 
@@ -212,6 +207,6 @@
 
 <audio id="audio" preload="none"></audio>
 <audio id="preview" preload="none"></audio>
-<script type="module" src="app.js?v=202609161211"></script>
+<script type="module" src="app.js?v=202609172010"></script>
 </body>
 </html>

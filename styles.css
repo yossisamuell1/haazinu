@@ -179,10 +179,6 @@ body[data-mode="siddur"] .verse .txt-he{font-size:1.35rem;line-height:1.9}
 .trope{font-size:.7rem;padding:.1rem .4rem;border-radius:999px;border:1px solid var(--line);color:var(--ink-2);white-space:nowrap}
 .trope.dis{border-color:var(--dis);color:var(--dis)}
 .trope.con{border-color:var(--con);color:var(--con)}
-.legend{display:flex;gap:.5rem;font-size:.75rem}
-.lg{padding:.15rem .5rem;border-radius:999px;border:1px solid var(--line)}
-.lg.dis{border-color:var(--dis);color:var(--dis)}
-.lg.con{border-color:var(--con);color:var(--con)}
 .attribution{font-size:.75rem;color:var(--muted);margin-top:1.4rem;border-top:1px solid var(--line);padding-top:.7rem;line-height:1.5}
 .attribution .ctx{margin-top:.4rem;font-family:var(--mono);font-size:.68rem}
 

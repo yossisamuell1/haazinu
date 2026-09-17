@@ -69,7 +69,7 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
 
-const state = { map: store.get("hz:map", "songs"), mode: "tanakh", book: "Genesis", chapter: 1, verse: 1, nusach: store.get("hz:nusach", "chabad"), leaf: 0, text: null, tab: "kriah", ytBlocked: false, week: null };
+const state = { map: store.get("hz:map", "songs"), mode: "tanakh", book: "Genesis", chapter: 1, verse: 1, nusach: store.get("hz:nusach", "chabad"), leaf: 0, text: null, tab: "songs", ytBlocked: false, week: null };
 const data = { parshiot: [], kriah: null, songs: [], mine: [], hidden: store.get("hz:hidden", []), siddur: null, art: [] };
 const bookInfo = (b) => BOOKS.find((x) => x.en === b);
 const isTorah = () => state.mode === "tanakh" && TORAH.includes(state.book);
