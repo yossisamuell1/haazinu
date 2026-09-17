@@ -3,7 +3,7 @@
    Songs: data/songs.json (+ localStorage additions); Apple Music previews and YouTube embeds. */
 
 const SEFARIA = "https://www.sefaria.org/api";
-const DATA_V = "202609171313";  // bump when data/*.json changes so browsers do not reuse an old cached copy
+const DATA_V = "202609172030";  // bump when data/*.json changes so browsers do not reuse an old cached copy
 const TORAH = ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy"];
 const BOOKS = [
   { en: "Genesis", he: "בראשית", ch: 50, sec: "Torah" }, { en: "Exodus", he: "שמות", ch: 40, sec: "Torah" }, { en: "Leviticus", he: "ויקרא", ch: 27, sec: "Torah" },

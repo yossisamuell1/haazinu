@@ -19,6 +19,11 @@ OUT = ART / "art_raw.json"
 UA = {"User-Agent": "Haazinu/1.0 (personal Torah app; verse-indexed artwork)"}
 REFRESH = "--refresh" in sys.argv
 
+# Commons category names are fixed identifiers, but the provenance label we ship is ours: no "Old Testament".
+def source_label(cat):
+    lab = cat.replace("Category:", "").replace("Old Testament", "Tanakh")
+    return "Tanakh illustrations by James Tissot" if lab == "Tanakh by James Tissot" else lab
+
 CATS = [
     "Category:The Phillip Medhurst Picture Torah", "Category:The Phillip Medhurst Collection",
     "Category:Old Testament by James Tissot", "Category:Doré's English Bible",
@@ -210,7 +215,7 @@ for f, cat in files.items():
     key = (title.lower(), artist.lower(), ref)
     if key in works: continue
     works[key] = {"title": title, "artist": artist or "Unknown", "year": (lambda y: y if y and int(y) < 1960 else None)((re.search(r"\b(1[0-9]{3}|20[0-2][0-9])\b", m.get("date") or "") or [None, None])[1] if re.search(r"\b(1[0-9]{3}|20[0-2][0-9])\b", m.get("date") or "") else None),
-                  "refs": [ref], "thumb": m["thumb"], "image": m["image"], "page": m["page"], "source": cat.replace("Category:", ""), "file": f}
+                  "refs": [ref], "thumb": m["thumb"], "image": m["image"], "page": m["page"], "source": source_label(cat), "file": f}
 items = list(works.values())
 for n, w in enumerate(items): w["id"] = f"art-{n+1}"
 json.dump({"meta": {"note": "Public-domain Tanakh artwork from Wikimedia Commons, keyed to the verse depicted.", "count": len(items)}, "works": items}, open(OUT, "w"), ensure_ascii=False, separators=(",", ":"))

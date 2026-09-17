@@ -63,7 +63,7 @@ Three harvesters feed it:
 
 Museum and archive titles have no verse, so they are matched against `data/scenes.json`. Those patterns need word boundaries and context: bare words caused real false matches ("cattle" pulled in cattle paintings, "endor" matched "vendor", "nebo" matched "Assinneboine"). Re-run the match-and-filter pass after editing the table.
 
-Biggest sources: Phillip Medhurst Picture Torah (467), Tissot's Old Testament (228), National Gallery of Art (196), Art Institute of Chicago (127), Rijksmuseum engravings (127), Bowyer Bible (106), Doré's English Bible (86).
+Biggest sources: Phillip Medhurst Picture Torah (467), Tissot's Tanakh series (228), National Gallery of Art (196), Art Institute of Chicago (127), Rijksmuseum engravings (127), Bowyer Bible (106), Doré's English Bible (86).
 
 The Metropolitan Museum begins returning 403 after a few thousand object fetches. `harvest_museums.py` caches fetched objects in `.work/art/met_objects.json` and takes `--no-met`, so a later run resumes instead of refetching.
 
