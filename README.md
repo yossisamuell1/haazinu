@@ -6,13 +6,17 @@ Static web app, no build step, no backend. Text comes live from the Sefaria API;
 
 ## Run
 
+**Live:** https://yossisamuell1.github.io/haazinu/ — served from GitHub Pages off `main`. Push to `main` and the site rebuilds in about a minute; nothing else to deploy.
+
+Locally:
+
 ```sh
 cd ~/haazinu
 python3 scripts/serve.py
 open http://localhost:8787/
 ```
 
-Any static server works (`file://` does not, the app fetches JSON). It is a PWA: on a phone, "Add to Home Screen" installs it and the shell works offline.
+Any static server works (`file://` does not, the app fetches JSON). `.work/` (source audio) and `scripts/.cache/` are gitignored: hundreds of MB, all regenerable.
 
 ## What is where
 
