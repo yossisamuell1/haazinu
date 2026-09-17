@@ -151,6 +151,7 @@ body[data-mode="siddur"] .verse .txt-he{font-size:1.35rem;line-height:1.9}
 .tabs{display:flex;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--surface);z-index:2}
 .tab{flex:1;padding:.7rem .5rem;font-weight:500;color:var(--muted);border-bottom:2px solid transparent}
 .tab.active{color:var(--tekhelet);border-bottom-color:var(--tekhelet)}
+.tab-collapse{display:none}
 .tabpane{padding:1rem 1.1rem 2rem}
 .sel-ref{margin-bottom:.8rem}
 .sel-ref-he{font-size:1.25rem;color:var(--tekhelet)}
@@ -227,16 +228,18 @@ body[data-mode="siddur"] .verse .txt-he{font-size:1.35rem;line-height:1.9}
 /* song book overlay */
 .songbook{position:fixed;inset:0;background:rgba(10,12,20,.45);z-index:50;display:flex;align-items:flex-start;justify-content:center;padding:4vh 1rem}
 .songbook-inner{background:var(--surface);border-radius:12px;width:min(56rem,100%);max-height:92vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.3)}
-.songbook-head{display:flex;gap:.5rem;padding:.9rem 1rem .5rem;align-items:center}
-.songbook-head input{flex:1}
-.songbook-head .icon{font-size:1.4rem;width:2.2rem;height:2.2rem;color:var(--muted)}
-.songbook .fine{padding:0 1rem .4rem}
-.songbook-list{overflow:auto;padding:0 .5rem 1rem}
+.songbook-head{display:flex;gap:.5rem;padding:.9rem 1rem .4rem;align-items:center}
+.songbook-head input{flex:1;min-width:0}
+.songbook-head .icon{font-size:1.4rem;width:2.2rem;height:2.2rem;color:var(--muted);flex:none}
+.songbook-filters{display:flex;gap:.5rem;align-items:center;flex-wrap:wrap;padding:0 1rem .7rem;border-bottom:1px solid var(--line)}
+.songbook-filters .fine{margin-left:auto;padding:0;white-space:nowrap}
+.songbook-list{overflow:auto;padding:.4rem .5rem 1rem}
 .sb{display:grid;grid-template-columns:1fr auto;gap:.5rem;padding:.55rem .6rem;border-radius:6px;text-decoration:none;color:var(--ink);align-items:center}
 .sb:hover{background:var(--surface-2)}
 .sb b{font-weight:600}
 .sb .he-inline{color:var(--tekhelet);margin-left:.4rem}
-.sb small{color:var(--muted);display:block;font-size:.78rem}
+.sb small{color:var(--muted);display:block;font-size:.78rem;margin-top:.1rem}
+.sb .play{color:var(--tekhelet);margin-left:.4rem;font-size:.82rem}
 .sb .ref{font-size:.78rem;color:var(--ink-2);white-space:nowrap;font-variant-numeric:tabular-nums}
 .sb .ref .n{color:var(--muted)}
 
@@ -250,11 +253,19 @@ body[data-mode="siddur"] .verse .txt-he{font-size:1.35rem;line-height:1.9}
   .nav .chapnav{order:1}
   .goto{order:2;flex:1}
   .goto input{max-width:100%;width:100%}
-  .layout{grid-template-columns:1fr;grid-template-rows:auto auto;transition:none}
+  .layout{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr);transition:none}
   body.focus .layout{grid-template-columns:1fr}
   .toc{position:fixed;inset:3.4rem 0 0 0;width:min(22rem,88vw);z-index:30;box-shadow:0 0 40px rgba(0,0,0,.25)}
-  .reader{padding:1.1rem .9rem 3rem}
-  .panel{border-left:0;border-top:1px solid var(--line)}
+  .reader{padding:1.1rem .9rem 5rem}
+  /* Songs/Art/Kriah fold into a sheet at the foot of the screen: the tab row is
+     always reachable, the pane only unfolds when a tab is tapped. */
+  .panel{position:fixed;left:0;right:0;bottom:0;z-index:25;border-left:0;border-top:1px solid var(--line);
+    max-height:3.2rem;overflow:hidden;box-shadow:0 -6px 24px rgba(0,0,0,.14);transition:max-height .26s ease}
+  body.sheet-open .panel{max-height:76vh;overflow-y:auto}
+  body:not(.sheet-open) .panel .tabpane{visibility:hidden}
+  body.welcoming .panel{display:none}
+  .tab-collapse{display:flex;align-items:center;justify-content:center;flex:0 0 2.6rem;color:var(--muted);font-size:1.1rem}
+  body:not(.sheet-open) .tab-collapse{display:none}
   .verse .txt-he{font-size:1.4rem}
 }
 @media (prefers-reduced-motion: reduce){ *{transition:none!important} }

@@ -14,9 +14,9 @@
 <meta name="apple-mobile-web-app-title" content="Haazinu">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Hebrew:wght@400;500&family=Frank+Ruhl+Libre:wght@400;500;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=202609172030">
+<link rel="stylesheet" href="styles.css?v=202609172130">
 </head>
-<body>
+<body class="welcoming">
 <header class="bar">
   <button id="menuBtn" class="icon menu" title="Library (m)" aria-label="Open library" aria-expanded="true">☰</button>
   <a class="brand" href="#" id="brandLink" title="Haazinu — listen">
@@ -112,6 +112,7 @@
       <button class="tab active" role="tab" data-tab="songs" aria-selected="true">Songs <span class="he-inline">ניגונים</span></button>
       <button class="tab" role="tab" data-tab="art" aria-selected="false">Art <span class="he-inline">אמנות</span></button>
       <button class="tab" role="tab" data-tab="kriah" aria-selected="false">Kriah <span class="he-inline">קריאה</span></button>
+      <button id="panelCollapse" class="tab-collapse" type="button" aria-label="Close verse tools" title="Close">▾</button>
     </div>
 
     <div id="tab-songs" class="tabpane" role="tabpanel">
@@ -195,18 +196,20 @@
 <div id="songbook" class="songbook" hidden>
   <div class="songbook-inner" role="dialog" aria-label="Song book">
     <div class="songbook-head">
-      <input id="songbookSearch" type="search" placeholder="Search songs, performers, verses… (e.g. Carlebach, Tehillim 121, Ufaratzta)" autocomplete="off">
-      <select id="songbookType"><option value="">All types</option><option value="verbatim">Verbatim</option><option value="liturgical">Liturgical</option><option value="niggun">Niggun</option><option value="children">Children</option><option value="adapted">Adapted</option></select>
-      <select id="songbookBook"><option value="">Everywhere</option></select>
+      <input id="songbookSearch" type="search" placeholder="Search songs, performers, verses…" autocomplete="off">
       <button id="songbookClose" class="icon" aria-label="Close">×</button>
     </div>
-    <div id="songbookCount" class="fine"></div>
+    <div class="songbook-filters">
+      <select id="songbookType"><option value="">All types</option><option value="verbatim">Verbatim</option><option value="liturgical">Liturgical</option><option value="niggun">Niggun</option><option value="children">Children</option><option value="adapted">Adapted</option></select>
+      <select id="songbookBook"><option value="">Everywhere</option></select>
+      <span id="songbookCount" class="fine"></span>
+    </div>
     <div id="songbookList" class="songbook-list"></div>
   </div>
 </div>
 
 <audio id="audio" preload="none"></audio>
 <audio id="preview" preload="none"></audio>
-<script type="module" src="app.js?v=202609172030"></script>
+<script type="module" src="app.js?v=202609172130"></script>
 </body>
 </html>

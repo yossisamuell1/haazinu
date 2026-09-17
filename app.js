@@ -3,7 +3,7 @@
    Songs: data/songs.json (+ localStorage additions); Apple Music previews and YouTube embeds. */
 
 const SEFARIA = "https://www.sefaria.org/api";
-const DATA_V = "202609172030";  // bump when data/*.json changes so browsers do not reuse an old cached copy
+const DATA_V = "202609172130";  // bump when data/*.json changes so browsers do not reuse an old cached copy
 const TORAH = ["Genesis", "Exodus", "Leviticus", "Numbers", "Deuteronomy"];
 const BOOKS = [
   { en: "Genesis", he: "בראשית", ch: 50, sec: "Torah" }, { en: "Exodus", he: "שמות", ch: 40, sec: "Torah" }, { en: "Leviticus", he: "ויקרא", ch: 27, sec: "Torah" },
@@ -407,6 +407,7 @@ function setLibrary(open) { document.body.classList.toggle("focus", !open); $("#
 async function showPassage(target) {
   const status = $("#readerStatus"); status.hidden = false; status.textContent = "Loading from Sefaria…";
   $("#welcome").hidden = true; $("#chapterHead").hidden = false;
+  document.body.classList.remove("welcoming"); setSheet(false);
   player.stop(); closeEmbeds(); stopPreview();
   setMode(target.mode);
   let ref, verse = target.verse || 1;
@@ -609,6 +610,7 @@ function openSongbook() {
   if (bookSel.options.length === 1) { for (const sec of ["Torah", "Nevi'im", "Ketuvim"]) { const og = el("optgroup", { label: sec }); for (const b of BOOKS.filter((b) => b.sec === sec)) og.append(el("option", { value: b.en }, b.en)); bookSel.append(og); } bookSel.append(el("option", { value: "Siddur" }, "Siddur")); }
   renderSongbook(); setTimeout(() => $("#songbookSearch").focus(), 30);
 }
+const nrec = (s) => (s.itunes?.length || 0) + (s.recordings?.length || 0);
 function renderSongbook() {
   const q = normQ($("#songbookSearch").value), type = $("#songbookType").value, book = $("#songbookBook").value;
   const list = $("#songbookList"); list.innerHTML = "";
@@ -619,7 +621,9 @@ function renderSongbook() {
   for (const s of rows) {
     const r = s.refs[0].replace(/^Siddur (Ashkenaz|Sefard|Chabad), /, "");
     list.append(el("a", { class: "sb", href: hashForRef(s.refs[0]), onclick: () => { $("#songbook").hidden = true; setTab("songs"); } },
-      el("span", {}, el("b", {}, s.title), s.title_he ? el("span", { class: "he-inline" }, s.title_he) : null, el("small", {}, [s.performer, s.type, (s.itunes?.length || s.recordings?.length) ? `${(s.itunes?.length || 0) + (s.recordings?.length || 0)} recordings` : ""].filter(Boolean).join(" · "))),
+      el("span", {}, el("b", {}, s.title), s.title_he ? el("span", { class: "he-inline" }, s.title_he) : null,
+        nrec(s) ? el("span", { class: "play", title: `${nrec(s)} recording${nrec(s) > 1 ? "s" : ""}` }, "♪") : null,
+        el("small", {}, [s.performer, s.type].filter(Boolean).join(" · "))),
       el("span", { class: "ref" }, r)));
   }
 }
@@ -727,8 +731,13 @@ function step(delta) {
   else if (c > BOOKS[bi].ch) { if (bi === BOOKS.length - 1) return; bi++; c = 1; }
   location.hash = `#${BOOKS[bi].en}.${c}.1`;
 }
+const phone = () => window.matchMedia("(max-width:820px)").matches;
+// On a phone the panel is a sheet at the foot of the screen: collapsed to its tab
+// row until a tab is asked for, so the reader keeps the whole page.
+function setSheet(open) { document.body.classList.toggle("sheet-open", open && phone()); }
 function setTab(name) {
   state.tab = name;
+  setSheet(true);
   document.querySelectorAll(".tab").forEach((x) => { const on = x.dataset.tab === name; x.classList.toggle("active", on); x.setAttribute("aria-selected", on); });
   document.querySelectorAll(".tabpane").forEach((p) => p.hidden = p.id !== `tab-${name}`);
 }
@@ -755,7 +764,11 @@ function wire() {
   $("#phraseColors").onchange = (e) => { document.body.classList.toggle("phrase", e.target.checked); store.set("hz:phrase", e.target.checked); };
   $("#autoHide").onchange = (e) => store.set("hz:autohide", e.target.checked);
   $("#nusachSelect").onchange = (e) => setNusach(e.target.value);
-  document.querySelectorAll(".tab").forEach((t) => t.onclick = () => setTab(t.dataset.tab));
+  document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
+    if (phone() && state.tab === t.dataset.tab && document.body.classList.contains("sheet-open")) { setSheet(false); return; }
+    setTab(t.dataset.tab);
+  });
+  $("#panelCollapse").onclick = () => setSheet(false);
   const chapterQueue = () => state.text.he.map((_, i) => ({ book: state.book, c: state.chapter, v: i + 1 })).filter((x) => timingFor(x.book, x.c, x.v));
   $("#playVerse").onclick = () => { player.queue = []; player.playVerse(state.book, state.chapter, state.verse); };
   $("#playFromHere").onclick = () => player.playQueue(chapterQueue().filter((x) => x.v >= state.verse));
@@ -781,7 +794,7 @@ function wire() {
   $("#songbookSearch").oninput = renderSongbook; $("#songbookType").onchange = renderSongbook; $("#songbookBook").onchange = renderSongbook;
   window.addEventListener("hashchange", () => { const r = parseHash(); if (r) go(r); });
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") { $("#songbook").hidden = true; $("#lightbox").hidden = true; return; }
+    if (e.key === "Escape") { $("#songbook").hidden = true; $("#lightbox").hidden = true; setSheet(false); return; }
     if (e.target.matches("input,select,textarea") || e.metaKey || e.ctrlKey) return;
     if (e.key === "/") { e.preventDefault(); $("#gotoInput").focus(); return; }
     if (e.key === "s") { openSongbook(); return; }
@@ -801,6 +814,7 @@ function wire() {
 }
 function showWelcome() {
   history.replaceState(null, "", location.pathname);
+  document.body.classList.add("welcoming"); setSheet(false);
   $("#welcome").hidden = false; $("#chapterHead").hidden = true; $("#verses").innerHTML = ""; state.text = null; $("#locBtn").textContent = "Haazinu";
   setLibrary(false); renderSongMap();
   setTimeout(() => $("#exploreInput").focus(), 50);
